@@ -1,0 +1,54 @@
+# IDE/Editor project files
+# ------------------------
+*.sublime*
+*.esproj
+nbproject
+.project
+.settings
+.idea
+*.swp
+.komodotools
+
+# OS generated files
+# ------------------
+*~
+.directory
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Build generated files
+# ---------------------
+*node_modules
+*sass-cache
+
+# Project wiki files
+# ------------------
+
+
+# Vagrant
+# -------
+Vagrantfile
+dumps/
+.vagrant/
+.beetbox/*
+!.beetbox/config.yml
+!.beetbox/Vagrantfile*
+
+# Local Drupal settings files
+# ---------------------------
+settings.local.php
+
+# Drupal default text files
+# -------------------------
+docroot/INSTALL*.txt
+docroot/UPGRADE.txt
+
+# Acquia related files
+# --------------------
+acquia-utils/
+.ah_site_archive_imported
+
+# Ensure dangerous module can not be re-added to codebase.
+docroot/modules/php/
