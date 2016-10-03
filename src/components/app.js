@@ -8,8 +8,8 @@ export default class App extends Component {
     return (
       <div>
         <SearchBar />
+        <MovieList />
         <MovieDetail />
-        <MovieList />        
       </div>
     );
   }

@@ -1,25 +1,24 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-//import { selectMovie } from '../actions/select_movie';
+import { selectMovie } from '../actions/select_movie';
 import { bindActionCreators } from 'redux';
 
 class MovieList extends Component {
 
   renderList(movie) {
-    const id = movie.Id;
-    const title = movie.Title;
-    const genre = movie.Genre;
-    const year = movie.ReleaseYear;
-    const rating = movie.Rating;
-    const image = movie.PosterPath;
+    console.log(movie);
+    const id = movie.id;
+    const title = movie.title;
+    const overview = movie.overview;
+    const release_date = movie.release_date;
+    const poster = 'https://image.tmdb.org/t/p/w500/' + movie.poster_path;
 
     return (
       <tr key={id}>
       <td>{title}</td>
-      <td>{genre}</td>
-      <td>{year}</td>
-      <td>{rating}</td>
-      <td><img src={image} className="poster" /></td>
+      <td>{overview}</td>
+      <td>{release_date}</td>
+      <td><img src= {poster} /></td>
       </tr>
   );
   }
@@ -30,9 +29,8 @@ class MovieList extends Component {
       <thead>
       <tr>
       <th>Title</th>
-      <th>Genre</th>
-      <th>Year</th>
-      <th>Rating</th>
+      <th>Overview</th>
+      <th>Release Date</th>
       <th>Poster</th>
       </tr>
       </thead>
@@ -49,7 +47,7 @@ function mapStateToProps(state) {
   };
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({ selectMovie: selectMovie }, dispatch);
-// }
-export default connect( mapStateToProps)(MovieList);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ selectMovie: selectMovie }, dispatch);
+}
+export default connect(mapStateToProps)(MovieList);

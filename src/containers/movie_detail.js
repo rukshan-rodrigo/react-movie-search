@@ -5,13 +5,14 @@ import { bindActionCreators } from 'redux';
 
 class MovieDetail extends Component {
   render() {
+
     if(!this.props.movie) {
-      return <div>Book not selected yet!!!</div>
+      return <div>Movie not selected yet!!!</div>
     }
 
     return (
       <div>
-      <h3>Book Detail!</h3>
+      <h3>Movie Detail!</h3>
     <div> Title: {this.props.movie.Title}</div>
     <div> Pages: {this.props.movie.Id}</div>
     </div>
@@ -21,7 +22,7 @@ class MovieDetail extends Component {
 
 function mapStateToProps(state) {
   return {
-    movie: state.activeMovie
+    movie: state.ActiveMovie
   }
 
 }
